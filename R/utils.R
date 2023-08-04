@@ -15,7 +15,7 @@ setStatListColOrder <- function(df) {
     "SEND_DE", "REC_TBL_SE"
   )
   cols <- matchCols(df, .statListCols)
-  return(df[, cols])
+  return(df[, cols, drop = FALSE])
 }
 
 setStatDataColOrder <- function(df) {
@@ -36,7 +36,7 @@ setStatDataColOrder <- function(df) {
     "DT"
   )
   cols <- matchCols(df, .statDataCols)
-  return(df[, cols])
+  return(df[, cols, drop = FALSE])
 }
 
 setStatExplColOrder <- function(df) {
@@ -53,7 +53,7 @@ setStatExplColOrder <- function(df) {
     "confmNo", "confmDt", "statsEnd"
   )
   cols <- matchCols(df, .statExplCols)
-  return(df[, cols])
+  return(df[, cols, drop = FALSE])
 }
 
 setStatMetaColOrder <- function(df, type =  c("TBL", "ORG", "PRD", "ITM", "CMMT", "UNIT", "SOURCE", "WGT", "NCD")) {
@@ -80,7 +80,7 @@ setStatMetaColOrder <- function(df, type =  c("TBL", "ORG", "PRD", "ITM", "CMMT"
     NCD = c("ORG_NM", "TBL_NM", "PRD_SE", "PRD_DE", "SEND_DE")
   )
   cols <- matchCols(df, .statMetaCols[[type]])
-  return(df[, cols])
+  return(df[, cols, drop = FALSE])
 }
 
 setStatSearchColOrder <- function(df) {
@@ -96,7 +96,7 @@ setStatSearchColOrder <- function(df) {
     "STAT_DB_CNT", "QUERY"
   )
   cols <- matchCols(df, .statSearchCols)
-  return(df[, cols])
+  return(df[, cols, drop = FALSE])
 }
 
 
