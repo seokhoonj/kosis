@@ -32,6 +32,6 @@ getStatMeta <- function(orgId, tblId, type = c("TBL", "ORG", "PRD", "ITM", "CMMT
   data <- jsonlite::fromJSON(content)
   if (!is.null(data$err))
     return(data)
-  statMeta <- setStatMetaColOrder(data)
+  statMeta <- setStatMetaColOrder(data, type = type)
   return(statMeta)
 }

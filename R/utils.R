@@ -56,11 +56,30 @@ setStatExplColOrder <- function(df) {
   return(df[, cols])
 }
 
-setStatMetaColOrder <- function(df) {
-  .statMetaCols <- c(
-    "TBL_NM", "TBL_NM_ENG"
+setStatMetaColOrder <- function(df, type =  c("TBL", "ORG", "PRD", "ITM", "CMMT", "UNIT", "SOURCE", "WGT", "NCD")) {
+  .statMetaCols <- list(
+    TBL = c("TBL_NM", "TBL_NM_ENG"),
+    ORG = c("ORG_NM", "ORG_NM_ENG"),
+    PRD = c("PRD_SE", "PRD_DE"),
+    ITM = c("OBJ_ID", "OBJ_NM", "OBJ_NM_ENG",
+            "ITM_ID", "ITM_NM", "ITM_NM_ENG",
+            "UP_ITM_ID", "OBJ_ID_SN",
+            "UNIT_ID", "UNIT_NM", "UNIT_ENG_NM"),
+    CMMT = c("CMMT_NM", "CMMT_DC", "OBJ_ID", "OBJ_NM", "ITM_ID", "ITM_NM"),
+    UNIT = c("UNIT_NM", "UNIT_NM_ENG"),
+    SOURCE = c("JOSA_NM", "DEPT_NM", "DEPT_PHONE", "STAT_ID"),
+    WGT = c("C1", "C1_NM", "C1_OBJ_NM",
+            "C2", "C2_NM", "C2_OBJ_NM",
+            "C3", "C3_NM", "C3_OBJ_NM",
+            "C4", "C4_NM", "C4_OBJ_NM",
+            "C5", "C5_NM", "C5_OBJ_NM",
+            "C6", "C6_NM", "C6_OBJ_NM",
+            "C7", "C7_NM", "C7_OBJ_NM",
+            "C8", "C8_NM", "C8_OBJ_NM",
+            "ITM_ID", "ITM_NM", "WGT_CO"),
+    NCD = c("ORG_NM", "TBL_NM", "PRD_SE", "PRD_DE", "SEND_DE")
   )
-  cols <- matchCols(df, .statMetaCols)
+  cols <- matchCols(df, .statMetaCols[[type]])
   return(df[, cols])
 }
 
