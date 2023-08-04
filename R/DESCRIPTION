@@ -1,0 +1,19 @@
+Package: kosis
+Title: Korean Statistical Information Service (KOSIS)
+Version: 0.0.1
+Authors@R: 
+    person(given = "Seokhoon", family = "Joo", role = c("aut", "cre"),
+           email = "seokhoonj@gmail.com")
+Description: API wrapper to download statistical information from the
+             Korean Statistical Information Service (KOSIS)
+             <https://kosis.kr/openapi/index/index.jsp>.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.0)
+Imports: 
+    data.table (>= 1.13.0),
+    httr (>= 1.4.3),
+    jsonlite (>= 1.7.2)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
