@@ -19,12 +19,12 @@ No return value, called to set api key
 Save KOSIS API key for the current session. To set it permanently, please add
 the following line to your .Renvrion file:
 
-KOSIS_API_KEY = YOUR API KEY
+KOSIS_API_KEY = "YOUR API KEY"
 }
 \examples{
 
 ## Set API Key for the current session
-\donttest{kosis.setKey("your_apiKey")}
+\donttest{kosis.setKey("your_api_key")}
 
 ## Check API key
 kosis.printKey()
