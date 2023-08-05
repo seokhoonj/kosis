@@ -12,8 +12,14 @@
 ##' @param parentListId A string specifying the parent list id
 ##' @return A data.frame object containing queried information
 ##' @export
-getStatList <- function(vwCd = "MT_ZTITLE", parentListId = "") {
+getStatList <- function(vwCd = c("MT_ZTITLE", "MT_OTITLE",
+                                 "MT_GTITLE01", "MT_GTITLE02",
+                                 "MT_CHOSUN_TITLE", "MT_HANKUK_TITLE",
+                                 "MT_STOP_TITLE", "MT_RTITLE", "MT_BUKHAN",
+                                 "MT_TM1_TITLE", "MT_TM2_TITLE", "MT_ETITLE"),
+                        parentListId = "") {
   apiKey <- kosis.getKey()
+  vwCd <- match.arg(vwCd)
   param <- list(
     method = "getList",
     apiKey = apiKey,
