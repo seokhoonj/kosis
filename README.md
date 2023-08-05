@@ -1,4 +1,4 @@
-## kosis package
+# kosis package
 
 <!-- badges: start -->
 
@@ -24,10 +24,10 @@ devtools::install_github("seokhoonj/kosis")
 library(kosis)
 
 # set your api key
-kosis.setKey(api_key = "your_api_key")
+kosis.setKey(apiKey = "your_api_key")
 
 # or permantly
-usethis::edit_r_environ() # add KOSIS_API_KEY=YOUR API KEY in .Renviron
+usethis::edit_r_environ() # add KOSIS_API_KEY="your_api_key" in .Renviron
 
 # get stat list
 getStatList(vwCd = "MT_ZTITLE", parentListId = "F_29")
