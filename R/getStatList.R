@@ -3,14 +3,16 @@
 ##' @details
 ##' \preformatted{
 ##' ## Example
-##' getStatList(vwCd = "MT_ZTITLE", parentListId = "A")
+##' getStatList(vwCd = "MT_ZTITLE", parentListId = "")
+##' getStatList(vwCd = "MT_ZTITLE", parentListId = "F")
+##' getStatList(vwCd = "MT_ZTITLE", parentListId = "F_29")
 ##' }
 ##'
 ##' @param vwCd A string specifying the view code
 ##' @param parentListId A string specifying the parent list id
 ##' @return A data.frame object containing queried information
 ##' @export
-getStatList <- function(vwCd = "MT_ZTITLE", parentListId) {
+getStatList <- function(vwCd = "MT_ZTITLE", parentListId = "") {
   apiKey <- kosis.getKey()
   param <- list(
     method = "getList",
