@@ -16,5 +16,6 @@
 ##' @importFrom httr content GET
 ##' @importFrom jsonlite fromJSON
 ##' @importFrom stats setNames
+##' @importFrom tibble as_tibble is_tibble
 ##' @importFrom utils browseURL head tail
 "_PACKAGE"

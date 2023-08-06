@@ -143,7 +143,7 @@ setCharToNumCols <- function(df, exceptCols) {
     cols <- cols[!cols %in% exceptCols]
   if (is.null(cols))
     return(df)
-  if (!is.data.table(df)) {
+  if (!data.table::is.data.table(df)) {
     df[, cols] <- lapply(df[, cols, drop = FALSE],
                          function(x) as.numeric(gsub("^-$", "", x)))
     return(df)
@@ -172,7 +172,7 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
   statDataSplit <- lapply(statDataSplit, function(x)
     setNames(x, c(names(x)[which(names(x) != "DT")], x[[itemVar]][1L])))
   exceptCols <- c("ITM_ID", "ITM_NM", "ITM_NM_ENG", "UNIT_ID", "UNIT_NM", "UNIT_NM_ENG")
-  if (is.data.table(statData)) {
+  if (data.table::is.data.table(statData)) {
     statDataSplit <- lapply(statDataSplit, function(x) {
       cols <- names(x)[!names(x) %in% exceptCols]
       x[, .SD, .SDcols = cols]
@@ -198,8 +198,33 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
   statDataItem <- Reduce(
     function(...) merge(..., by = by, all = TRUE, sort = TRUE), statDataSplit
   )
+  if (tibble::is_tibble(statData))
+    statDataItem <- tibble::as_tibble(statDataItem)
   return(setCharToNumCols(statDataItem, exceptCols = "PRD_DE"))
 }
+
+# checkGroupUnique <- function(data, colSuffix = c("_NM", "_NM_ENG", "")) {
+#   colSuffix <- match.arg(colSuffix)
+#   .statDataCols <- c(
+#     "ORG_ID", "TBL_ID", "TBL_NM",
+#     paste0(c("C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8"), colSuffix),
+#     if (colSuffix == "") "ITM_ID" else paste0("ITM", colSuffix),
+#     "PRD_DE"
+#   )
+#   cols <- matchCols(data, .statDataCols)
+#   if (data.table::is.data.table(data)) {
+#     ndata <- data[, list(n = .N), keyby = cols]
+#   } else {
+#     ndata <- data %>% group_by_at(.vars = cols) %>%
+#       summarise(n = n(), .groups = "drop")
+#     if (!is_tibble(data))
+#       ndata <- as.data.frame(ndata)
+#   }
+#   check <- all(ndata$n == 1)
+#   cat("all group variables are unique:", check, "\n")
+#   invisible(ndata)
+# }
+
 
 # open kosis url ----------------------------------------------------------
 
