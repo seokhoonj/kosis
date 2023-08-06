@@ -1,12 +1,5 @@
 # kosis package
 
-```{=html}
-<style>
-tr:nth-child(odd) {
-  fill: #f4f4f4!important;
-}
-</style>
-```
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kosis)](https://cran.r-project.org/package=kosis)
@@ -18,20 +11,20 @@ tr:nth-child(odd) {
 Korean Statistical Information Service (KOSIS Open API Service)\
 (<https://kosis.kr/openapi/index/index.jsp>)
 
-| Service View Code  | Service View Name        |
-|:-------------------|:-------------------------|
-| MT_ZTITLE          | 국내통계 주제별          |
-| MT_OTITLE          | 국내통계 기관별          |
-| MT_GTITLE01        | e-지방지표(주제별)       |
-| MT_GTITLE02        | e-지방지표(지역별)       |
-| MT_CHOSUN_TITLE    | 광복이전통계(1908\~1943) |
-| MT_HANKUK_TITLE    | 대한민국통계연감         |
-| MT_STOP_TITLE      | 작성중지통계             |
-| MT_RTITLE          | 국제통계                 |
-| MT_BUKHAN          | 북한통계                 |
-| MT_TM1_TITLE       | 대상별통계               |
-| MT_TM2_TITLE       | 이슈별통계               |
-| MT_ETITLE          | 영문 KOSIS               |
+| Service View Code | Service View Name        |
+|:------------------|:-------------------------|
+| MT_ZTITLE         | 국내통계 주제별          |
+| MT_OTITLE         | 국내통계 기관별          |
+| MT_GTITLE01       | e-지방지표(주제별)       |
+| MT_GTITLE02       | e-지방지표(지역별)       |
+| MT_CHOSUN_TITLE   | 광복이전통계(1908\~1943) |
+| MT_HANKUK_TITLE   | 대한민국통계연감         |
+| MT_STOP_TITLE     | 작성중지통계             |
+| MT_RTITLE         | 국제통계                 |
+| MT_BUKHAN         | 북한통계                 |
+| MT_TM1_TITLE      | 대상별통계               |
+| MT_TM2_TITLE      | 이슈별통계               |
+| MT_ETITLE         | 영문 KOSIS               |
 
 ## Installation
 
