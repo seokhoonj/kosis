@@ -9,7 +9,6 @@ Description: API wrapper to download statistical information from the
              <https://kosis.kr/openapi/index/index.jsp>.
 License: MIT + file LICENSE
 Encoding: UTF-8
-LazyData: true
 Depends: R (>= 3.5.0)
 Imports: 
     data.table (>= 1.13.0),
