@@ -145,10 +145,12 @@ setCharToNumCols <- function(df, exceptCols) {
   if (is.null(cols))
     return(df)
   if (!is.data.table(df)) {
-    df[, cols] <- lapply(df[, cols, drop = FALSE], as.numeric)
+    df[, cols] <- lapply(df[, cols, drop = FALSE],
+                         function(x) as.numeric(gsub("^-$", "", x)))
     return(df)
   }
-  df[, (cols) := lapply(.SD, as.numeric), .SDcols = cols]
+  df[, (cols) := lapply(.SD, function(x) as.numeric(gsub("^-$", "", x))),
+     .SDcols = cols]
   return(df[])
 }
 
