@@ -134,7 +134,7 @@ setURL <- function(param) {
 
 # cast stat data ----------------------------------------------------------
 
-checkNum <- function(x) all(grepl("^[0-9.,]+$", x))
+checkNum <- function(x) all(grepl("^[0-9.,]+$|^-[0-9.,]+|^-$", x))
 
 guessNumCols <- function(df) names(df)[sapply(df, checkNum) == TRUE]
 
