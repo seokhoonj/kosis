@@ -58,3 +58,17 @@ url <- "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList
 data <- getStatDataFromURL(url)
 life_table <- castItem(statData = data, itemVar = "ITM_NM")
 ```
+
+## Error
+
+``` r
+# The method using orgId and tblId is relatively easy but not recommended by KOSIS
+# Need to manage some errors to use this method.
+
+# default arguments: objL1 = "ALL", objL2 = "", objL3 = "", objL4 = "", ...
+getStatData(orgId = "117", tblId = "DT_117N_A00124")
+# If the error code is 20, change the objL2 variable
+getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL")
+# If the error code is 20 again, change the objL3 variable
+getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL")
+```
