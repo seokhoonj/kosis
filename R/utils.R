@@ -43,8 +43,7 @@ setStatExplColOrder <- function(df) {
   .statExplCols <- c(
     "statsNm", "statsKind", "statsContinue",
     "basisLaw", "writingPurps", "statsPeriod",
-    "writingSystem", "pubExtent", "pubPeriod",
-    "writingTel", "statsField",
+    "writingSystem", "writingTel", "statsField",
     "examinObjrange", "examinObjArea",
     "josaUnit", "applyGroup", "josaItm",
     "pubPeriod", "pubExtent", "publictMth",
