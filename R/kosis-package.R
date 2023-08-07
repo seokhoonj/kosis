@@ -15,7 +15,7 @@
 ##' @importFrom data.table .SD `:=` is.data.table
 ##' @importFrom httr content GET
 ##' @importFrom jsonlite fromJSON
-##' @importFrom stats setNames
+##' @importFrom stats complete.cases setNames
 ##' @importFrom tibble as_tibble is_tibble
 ##' @importFrom utils browseURL head tail
 "_PACKAGE"
