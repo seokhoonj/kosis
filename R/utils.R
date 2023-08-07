@@ -135,7 +135,7 @@ setURL <- function(param) {
 
 checkNum <- function(x) all(grepl("^[0-9.,]+$|^-[0-9.,]+|^-$", x))
 
-guessNumCols <- function(df) names(df[complete.cases(df)])[sapply(df[complete.cases(df)], checkNum) == TRUE]
+guessNumCols <- function(df) names(df[complete.cases(df),])[sapply(df[complete.cases(df),], checkNum) == TRUE]
 
 setCharToNumCols <- function(df, exceptCols) {
   cols <- guessNumCols(df)
