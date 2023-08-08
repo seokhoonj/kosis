@@ -29,6 +29,8 @@ Korean Statistical Information Service (KOSIS Open API Service)\
 ## Installation
 
 ``` r
+install.packages("kosis")
+
 # install dev version
 devtools::install_github("seokhoonj/kosis")  
 ```
