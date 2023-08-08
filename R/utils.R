@@ -225,24 +225,6 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
 #   invisible(ndata)
 # }
 
-
-# open kosis url ----------------------------------------------------------
-
-##' Browse KOSIS webpage to find the url
-##'
-##' @details
-##' \preformatted{
-##' ## Example
-##' browseKosis()
-##' }
-##'
-##' @return No return value, browse KOSIS webpage to find the url
-##' @export
-browseKosis <- function() {
-  browseURL("https://kosis.kr/openapi/devGuide/devGuide_0203List.jsp")
-  cat("The URL to download the data can be found on this webpage.")
-}
-
 # setParamTable <- function(param) {
 #   param_table <- data.frame(param)
 #   param_table$objL3 <- ""
