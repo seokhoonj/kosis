@@ -55,8 +55,7 @@ getStatList(vwCd = "MT_ZTITLE", parentListId = "F_29") # life tables
 data <- getStatData(orgId = "101", tblId = "DT_1B41", objL1 = "ALL")
 life_table <- castItem(statData = data, itemVar = "ITM_NM")
 
-# or get stat data from URL (recommeded by KOSIS)
-browseKosis() # open a webpage where you can find the url to download the data
+# or get stat data from URL (recommeded by KOSIS) <https://kosis.kr/openapi/devGuide/devGuide_0203List.jsp>
 url <- "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=&itmId=T6+T16+T26+T5+T15+T25+T2+T12+T22+T3+T13+T23+T4+T14+T24+T1+T11+T21+&objL1=ALL&objL2=&objL3=&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=3&prdInterval=1&orgId=101&tblId=DT_1B41"
 data <- getStatDataFromURL(url)
 life_table <- castItem(statData = data, itemVar = "ITM_NM")
@@ -64,7 +63,7 @@ life_table <- castItem(statData = data, itemVar = "ITM_NM")
 
 ## Usage
 
-1.  `getStatData` function
+1. `getStatData` function
 
 ``` r
 # The method using orgId and tblId is relatively easy but not recommended by KOSIS
@@ -76,5 +75,6 @@ getStatData(orgId = "117", tblId = "DT_117N_A00124")
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL")
 # If the error code is 20 again, change the objL3 variable
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL")
+getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL", objL4 = "ALL")
 ...
 ```
