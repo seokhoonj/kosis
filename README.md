@@ -75,6 +75,7 @@ getStatData(orgId = "117", tblId = "DT_117N_A00124")
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL")
 # If the error code is 20 again, change the objL3 variable
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL")
+# If the error code is 20 again, change the objL4 variable
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL", objL4 = "ALL")
 ...
 ```
