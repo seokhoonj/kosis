@@ -2,7 +2,7 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml) [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kosis)](https://cran.r-project.org/package=kosis)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kosis)](https://cran.r-project.org/package=kosis) [![R-CMD-check](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/seokhoonj/kosis/actions/workflows/R-CMD-check.yaml)
 
 <!-- badges: end -->
 
@@ -29,6 +29,7 @@ Korean Statistical Information Service (KOSIS Open API Service)\
 ## Installation
 
 ``` r
+# install from CRAN
 install.packages("kosis")
 
 # install dev version
@@ -61,7 +62,9 @@ data <- getStatDataFromURL(url)
 life_table <- castItem(statData = data, itemVar = "ITM_NM")
 ```
 
-## Error
+## Usage
+
+1.  `getStatData` function
 
 ``` r
 # The method using orgId and tblId is relatively easy but not recommended by KOSIS
@@ -73,4 +76,5 @@ getStatData(orgId = "117", tblId = "DT_117N_A00124")
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL")
 # If the error code is 20 again, change the objL3 variable
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL")
+...
 ```
