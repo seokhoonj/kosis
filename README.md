@@ -70,30 +70,9 @@ Example of plot using life table data from KOSIS <img src="man/figures/README-ex
 getStatList("MT_ZTITLE", parentListId = "F_29") # 국내통계 기관별
 ```
 
-```         
-      VW_CD           VW_NM ORG_ID  TBL_ID                       TBL_NM ...
-1 MT_ZTITLE 국내통계 주제별    101 DT_1B41            간이생명표(5세별)
-2 MT_ZTITLE 국내통계 주제별    101 DT_1B42            완전생명표(1세별)
-3 MT_ZTITLE 국내통계 주제별    101 DT_1B43        사망원인생명표(5세별)
-4 MT_ZTITLE 국내통계 주제별    101 DT_1B44     시도별 간이생명표(5세별)
-5 MT_ZTITLE 국내통계 주제별    101 DT_1B45 시도별 사망원인생명표(5세별)
-6 MT_ZTITLE 국내통계 주제별    101 DT_1B46          건강수준별 기대여명
-...
-```
-
 ``` r
 # search directly by word to get the table ID
 getStatSearch("생명표")
-```
-
-```         
-   ORG_ID     ORG_NM         TBL_ID                              TBL_NM ...
-1     101     통계청        DT_1B42                   완전생명표(1세별)
-2     101     통계청        DT_1B41                   간이생명표(5세별)
-3     101     통계청        DT_1B43               사망원인생명표(5세별)
-4     101     통계청        DT_1B44            시도별 간이생명표(5세별)
-5     101     통계청        DT_1B45        시도별 사망원인생명표(5세별)
-...
 ```
 
 2.  `getStatData`
