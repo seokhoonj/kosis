@@ -99,7 +99,22 @@ getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL
 getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL", objL4 = "ALL")
 ```
 
-3.  `getStatDataFromURL`
+3.  `castItem`
+
+-   converts an item variable from long to wide format.
+-   itemVar = "ITM_NM" is a default option.
+
+``` r
+# download data from KOSIS
+data <- getStatData(orgId = "101", tblId = "DT_1B42")
+
+# item
+castItem(data, itemVar = "ITM_NM") # default itemVar
+castItem(data, itemVar = "ITM_ID")
+castItem(data, itemVar = "ITM_NM_ENG")
+```
+
+4.  `getStatDataFromURL`
 
 -   downloads data from the url found on the KOSIS webpage below
 -   <https://kosis.kr/openapi/devGuide/devGuide_0203List.jsp>
@@ -110,7 +125,7 @@ url <- "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList
 getStatDataFromURL(url)
 ```
 
-4.  `getStatExpl`, `getStatMeta`
+5.  `getStatExpl`, `getStatMeta`
 
 -   `getStatExpl` explains user note, glossary of terms, history, etc.
 -   `getStatMeta` explains the contents of the data.
