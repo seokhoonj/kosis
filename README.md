@@ -36,7 +36,7 @@ install.packages("kosis")
 devtools::install_github("seokhoonj/kosis")  
 ```
 
-## Example
+## Examples
 
 ``` r
 library(kosis)
@@ -56,7 +56,7 @@ data <- getStatData(orgId = "101", tblId = "DT_1B42", objL1 = "ALL")
 life_table <- castItem(statData = data, itemVar = "ITM_NM")
 ```
 
-Example of plot using life table data from KOSIS <img src="man/figures/README-example-1.png" alt="barplot of expectation of life at age."/>
+An example of plot using life table data from KOSIS <img src="man/figures/README-example-1.png" alt="plot of expectation of life at age."/>
 
 ## Usage
 
