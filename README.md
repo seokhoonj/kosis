@@ -126,7 +126,7 @@ getStatData(orgId = "117", tblId = "DT_117N_A00124", objL2 = "ALL", objL3 = "ALL
 -   <https://kosis.kr/openapi/devGuide/devGuide_0203List.jsp>
 
 ``` r
-# or get stat data from URL (recommeded by KOSIS) ``
+# or get stat data from URL (recommeded by KOSIS)
 url <- "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=&itmId=T6+T16+T26+T5+T15+T25+T2+T12+T22+T3+T13+T23+T4+T14+T24+T1+T11+T21+&objL1=00&objL2=&objL3=&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=3&prdInterval=1&orgId=101&tblId=DT_1B41"
 getStatDataFromURL(url)
 ```
