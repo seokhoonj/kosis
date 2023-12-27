@@ -135,7 +135,8 @@ setURL <- function(param) {
 
 checkNum <- function(x) all(grepl("^[0-9.,]+$|^-[0-9.,]+|^-$", x))
 
-guessNumCols <- function(df) names(df[complete.cases(df),])[sapply(df[complete.cases(df),], checkNum) == TRUE]
+guessNumCols <- function(df) names(df)[sapply(df, function(x)
+  checkNum(x[!is.na(x)])) == TRUE]
 
 setCharToNumCols <- function(df, exceptCols) {
   cols <- guessNumCols(df)
@@ -201,6 +202,25 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
   if (tibble::is_tibble(statData))
     statDataItem <- tibble::as_tibble(statDataItem)
   return(setCharToNumCols(statDataItem, exceptCols = "PRD_DE"))
+}
+
+
+# Remove unique columns ---------------------------------------------------
+
+##' Remove columns that consist of unique values
+##'
+##' @details
+##' \preformatted{
+##' ## Example
+##' df <- removeUniqueCols(statData = statData)
+##' }
+##'
+##' @param statData A data.frame downloaded from getStatData function
+##' @return A data.frame object with columns that consist of non-unique values
+##' @export
+removeUniqueCols <- function(statData) {
+  cols <- names(df)[sapply(df, function(x) length(unique(x)) > 1L)]
+  return(df[, cols, drop = FALSE])
 }
 
 # checkGroupUnique <- function(data, colSuffix = c("_NM", "_NM_ENG", "")) {
