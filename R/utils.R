@@ -220,6 +220,8 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
 ##' @export
 removeUniqueCols <- function(statData) {
   cols <- names(df)[sapply(df, function(x) length(unique(x)) > 1L)]
+  if (data.table::is.data.table(df))
+    return(df[, cols, with = FALSE])
   return(df[, cols, drop = FALSE])
 }
 
