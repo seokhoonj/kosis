@@ -219,10 +219,10 @@ castItem <- function(statData, itemVar = c("ITM_NM", "ITM_ID", "ITM_NM_ENG")) {
 ##' @return A data.frame object with columns that consist of non-unique values
 ##' @export
 removeUniqueCols <- function(statData) {
-  cols <- names(df)[sapply(df, function(x) length(unique(x)) > 1L)]
-  if (data.table::is.data.table(df))
-    return(df[, cols, with = FALSE])
-  return(df[, cols, drop = FALSE])
+  cols <- names(statData)[sapply(statData, function(x) length(unique(x)) > 1L)]
+  if (data.table::is.data.table(statData))
+    return(statData[, cols, with = FALSE])
+  return(statData[, cols, drop = FALSE])
 }
 
 # checkGroupUnique <- function(data, colSuffix = c("_NM", "_NM_ENG", "")) {
